@@ -1,0 +1,579 @@
+Today
+Enhancing Contact Details Styling for Portfolio
+7 Days
+Added Two Projects to Portfolio
+30 Days
+Understanding and Creating a Professional Portfolio
+Understanding IP Address Range 172.31.0.0/16
+FIFA 13 System Availability and Features
+Create E-commerce Site with HTML, CSS, JS
+Enhanced Cleaning Services Page Design
+Enhancing Contact Details Styling for Portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akunna Obumneke - Software Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        /* Base Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+     body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #FFF3E0; /* Light orange */
+    color: black;
+    line-height: 1.6;
+}
+
+        :root {
+            --primary: #2a2d43;
+            --secondary: #4e598c;
+            --accent: #f9c784;
+            --light: #ffffff;
+            --dark: #212529;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            color: var(--primary);
+        }
+
+        .section-title::after {
+            content: "";
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary);
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 5px;
+            background: var(--secondary);
+            color: white;
+            font-weight: bold;
+            transition: 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-light {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .btn-light:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* About */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .about-img {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+        }
+
+        .about-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: var(--light);
+            border-radius: 30px;
+            padding: 10px 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-desc {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tech-tag {
+            background: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .project-links a {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Contact */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-details {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .contact-details li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-text {
+                max-width: 100%;
+            }
+            .contact-container {
+                flex-direction: column;
+            }
+            #hero {
+                padding-top: 80px;
+                height: auto;
+                min-height: 100vh;
+            }
+            .hero-description {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-container">
+        <a href="#" class="logo">Akunna<span>Obumneke</span></a>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section id="hero">
+    <div class="container hero-content">
+        <h1 class="hero-title">Hello, I'm Akunna Obumneke</h1>
+        <h2 class="hero-subtitle">Full Stack Developer</h2>
+        <p class="hero-description">I build exceptional and scalable web applications with clean code and user-friendly interfaces. Let's bring your ideas to life!</p>
+        <div class="hero-btns">
+    <a href="resume.pdf" class="btn" download>Download CV</a>
+    <a href="#contact" class="btn btn-light">Contact Me</a>
+</div>
+
+</section>
+
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-img">
+                <img src="Untitled-1.jpg" alt="Akunna Obumneke" />
+            </div>
+            <div class="about-text">
+                <h3>A dedicated developer with a passion for clean code</h3>
+                <p>Hello! I'm Lixy, a software developer with over 2 years of experience specializing in building responsive and performant web applications. I enjoy turning complex problems into simple, beautiful, and intuitive solutions.</p>
+                <div class="skills">
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">React</span>
+                    <span class="skill">Node.js</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">HTML/CSS</span>
+                    <span class="skill">MongoDB</span>
+                    <span class="skill">AWS</span>
+                    <span class="skill">Git</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="E-Commerce Platform" />
+                </div>
+              <div class="project-card">
+    <div class="project-img">
+        <img src="https://via.placeholder.com/400x200?text=Coming+Soon" alt="Coming Soon" />
+    </div>
+    <div class="project-info">
+        <h3 class="project-title">Coming Soon</h3>
+        <p class="project-desc">Exciting new project launching soon. Stay tuned for updates!</p>
+        <div class="project-tech">
+            <span class="tech-tag">TBA</span>
+        </div>
+        <div class="project-links">
+            <a href="#"><i class="fas fa-hourglass-half"></i> In Progress</a>
+        </div>
+    </div>
+</div>
+
+            </div>
+<div class="project-card">
+    <div class="project-img">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Social Media Dashboard" />
+    </div>
+    <div class="project-info">
+        <h3 class="project-title">Social Media Dashboard</h3>
+        <p class="project-desc">An interactive dashboard to monitor social media analytics and engagement metrics.</p>
+        <div class="project-tech">
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">Express.js</span>
+            <span class="tech-tag">PostgreSQL</span>
+        </div>
+        <div class="project-links">
+            <a href="https://your-demo-link.com" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/yourusername/social-media-dashboard" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i> Source Code
+            </a>
+        </div>
+    </div>
+</div>
+
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" alt="Task Management App" />
+                </div>
+               <div class="project-card">
+    <div class="project-img">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" alt="Creating of App" />
+    </div>
+    <div class="project-info">
+        <h3 class="project-title">Creating of Applications</h3>
+        <p class="project-desc">A web-based application project focused on end-to-end development — from UI design to deployment.</p>
+        <div class="project-tech">
+            <span class="tech-tag">Angular</span>
+            <span class="tech-tag">Firebase</span>
+            <span class="tech-tag">TypeScript</span>
+        </div>
+        <div class="project-links">
+            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="#"><i class="fab fa-github"></i> Source Code</a>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's talk about your project</h3>
+                <p>I'm currently available for freelance work and full-time opportunities.</p>
+                <ul class="contact-details">
+                    <li><i class="fas fa-map-marker-alt"></i> Ibeju Lekki, Lagos, Nigeria</li>
+                    <li><i class="fas fa-envelope"></i> obumlixy9@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> +234 9047168258</li>
+                </ul>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="social-links">
+            <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Dev.to"><i class="fab fa-dev"></i></a>
+        </div>
+        <p>&copy; 2024 Lixy Akunna. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
